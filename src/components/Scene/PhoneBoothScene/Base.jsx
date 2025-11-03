@@ -1,73 +1,61 @@
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useTexture } from "@react-three/drei";
+import BaseTexture from "&/Base.jpg";
+import * as THREE from "three";
 
 export function Base(props) {
-  const { nodes, materials } = useGLTF("/Reze_Phone_Base.glb");
+  const { nodes, materials } = useGLTF("/Base.glb");
+
+  const bakedTexture = useTexture(BaseTexture);
+
+  bakedTexture.flipY = false;
+  bakedTexture.colorSpace = THREE.SRGBColorSpace;
+  bakedTexture.minFilter = THREE.LinearFilter;
+  bakedTexture.magFilter = THREE.NearestFilter;
+
   return (
     <group {...props} dispose={null}>
-      <group position={[1.851, -0.048, 2.567]} scale={[0.275, 0.275, 0.399]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube022.geometry}
-          material={materials["Material.012"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube022_1.geometry}
-          material={materials["Material.024"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube022_2.geometry}
-          material={materials["Material.025"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube022_3.geometry}
-          material={materials["Material.026"]}
-        />
-      </group>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Cube.geometry}
-        material={materials["Material.012"]}
+        geometry={nodes.Cube015_Baked.geometry}
+        material={materials.MergedBake_Baked}
+        position={[1.851, -0.048, 2.567]}
+        scale={[0.275, 0.275, 0.399]}
+      >
+        <meshBasicMaterial map={bakedTexture} />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube_Baked.geometry}
+        material={materials.MergedBake_Baked}
         position={[0, 0.1, 0]}
         scale={[2.5, 0.1, 2.5]}
-      />
-      <group position={[0.26, 0.1, 0]} scale={[0.522, 0.1, 2.5]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube016.geometry}
-          material={materials["Material.007"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube016_1.geometry}
-          material={materials.Material}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube016_2.geometry}
-          material={materials["Material.001"]}
-        />
-      </group>
+      >
+        <meshBasicMaterial map={bakedTexture} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Plane010.geometry}
-        material={materials["Material.037"]}
+        geometry={nodes.Cube012_Baked.geometry}
+        material={materials.MergedBake_Baked}
+        position={[0.26, 0.1, 0]}
+        scale={[0.522, 0.1, 2.5]}
+      >
+        <meshBasicMaterial map={bakedTexture} />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane010_Baked.geometry}
+        material={materials.MergedBake_Baked}
         scale={15.408}
-      />
+      >
+        <meshBasicMaterial map={bakedTexture} />
+      </mesh>
     </group>
   );
 }
 
-useGLTF.preload("/Reze_Phone_Base.glb");
+useGLTF.preload("/Base.glb");
