@@ -5,6 +5,7 @@ import { Denze } from "./Denze";
 import { Guard } from "./Guard";
 import { Phone } from "./Phone";
 import { PhoneBoothGlass } from "./PhoneBoothGlass";
+import { Rain } from "./Rain";
 import { RedFlower } from "./RedFlower";
 import { Reze } from "./Reze";
 import { Store } from "./Store";
@@ -24,6 +25,7 @@ export const PhoneBoothScene = () => {
       <Denze />
       <Reze />
       <PhoneBoothGlass />
+      <Rain />
     </group>
   );
 };

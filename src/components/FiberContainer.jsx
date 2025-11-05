@@ -1,34 +1,28 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrthographicCamera } from "@react-three/drei";
-import { useRef } from "react";
-import * as THREE from "three";
+import { Canvas } from "@react-three/fiber";
+import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
 import { Experience } from "./Experience";
-
-function CustomCamera() {
-  const cameraRef = useRef();
-  const target = new THREE.Vector3(0, 2, 0); // 👈 카메라가 바라볼 지점
-
-  useFrame(() => {
-    if (cameraRef.current) {
-      cameraRef.current.lookAt(target);
-    }
-  });
-
-  return (
-    <OrthographicCamera
-      ref={cameraRef}
-      makeDefault
-      position={[7, 7, 10]}
-      zoom={100}
-    />
-  );
-}
+import CameraControls from "./Scene/PhoneBoothScene/CameraControls";
+import { OrbitControls } from "@react-three/drei";
 
 export default function FiberContainer() {
   return (
     <Canvas>
-      <CustomCamera />
+      <CameraControls />
       <Experience />
+      <OrbitControls
+        enableRotate={true}
+        enablePan={true}
+        enableZoom={true}
+        // 📌 회전 제한 (상하)
+        // minPolarAngle={Math.PI / 4} // 아래로 45도
+        // maxPolarAngle={Math.PI / 3} // 위로 90도
+        // // 📌 회전 제한 (좌우)
+        // minAzimuthAngle={0} // 왼쪽 45도
+        // maxAzimuthAngle={Math.PI / 4} // 오른쪽 45도
+        // // 📌 줌 제한 (orthographic 전용)
+        // minZoom={80}
+        // maxZoom={150}
+      />
     </Canvas>
   );
 }

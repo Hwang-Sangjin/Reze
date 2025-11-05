@@ -23,6 +23,10 @@ export function Store(props) {
       >
         <meshBasicMaterial map={bakedTexture} />
       </mesh>
+      <mesh position={[0, 2, -1]}>
+        <planeGeometry args={[20, 6, 5, 5]} />
+        <meshPhysicalMaterial transmission={1} roughness={0.15} />
+      </mesh>
     </group>
   );
 }
