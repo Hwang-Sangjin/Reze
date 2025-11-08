@@ -1,5 +1,5 @@
 import { useGLTF, useTexture } from "@react-three/drei";
-import BaseTexture from "&/Store.jpg";
+import BaseTexture from "&/Booth/Store.jpg";
 import * as THREE from "three";
 
 export function Store(props) {

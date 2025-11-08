@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import BaseTexture from "&/Base.jpg";
+import BaseTexture from "&/Booth/Base.jpg";
 import * as THREE from "three";
 
 export function Base(props) {

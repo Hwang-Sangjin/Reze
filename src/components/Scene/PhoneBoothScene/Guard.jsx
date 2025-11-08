@@ -1,5 +1,5 @@
 import { useGLTF, useTexture } from "@react-three/drei";
-import BaseTexture from "&/Guard.jpg";
+import BaseTexture from "&/Booth/Guard.jpg";
 import * as THREE from "three";
 
 export function Guard(props) {

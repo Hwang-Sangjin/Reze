@@ -3,12 +3,12 @@ import * as THREE from "three";
 import rainFragmentShader from "@/shaders/RainFrag.glsl";
 import rainVertexShader from "@/shaders/RainVertex.glsl";
 import { useEffect, useMemo, useState } from "react";
-import Perlin from "&/perlin.png";
+import Perlin from "&/Booth/perlin.png";
 import { useFrame } from "@react-three/fiber";
 
 export const Rain = () => {
   const [SnowGeometry, setSnowGeometry] = useState(new THREE.BufferGeometry());
-  const particle_cnt = 5000; //0~5000
+  const particle_cnt = 2000; //0~5000
 
   const PerlinTexture = new THREE.TextureLoader().load(Perlin);
   PerlinTexture.wrapS = THREE.RepeatWrapping;

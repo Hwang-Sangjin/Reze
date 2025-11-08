@@ -14,14 +14,14 @@ export default function FiberContainer() {
         enablePan={true}
         enableZoom={true}
         // 📌 회전 제한 (상하)
-        // minPolarAngle={Math.PI / 4} // 아래로 45도
-        // maxPolarAngle={Math.PI / 3} // 위로 90도
-        // // 📌 회전 제한 (좌우)
-        // minAzimuthAngle={0} // 왼쪽 45도
-        // maxAzimuthAngle={Math.PI / 4} // 오른쪽 45도
-        // // 📌 줌 제한 (orthographic 전용)
-        // minZoom={80}
-        // maxZoom={150}
+        minPolarAngle={Math.PI / 4} // 아래로 45도
+        maxPolarAngle={Math.PI / 3} // 위로 90도
+        // 📌 회전 제한 (좌우)
+        minAzimuthAngle={0} // 왼쪽 45도
+        maxAzimuthAngle={Math.PI / 4} // 오른쪽 45도
+        // 📌 줌 제한 (orthographic 전용)
+        minZoom={90}
+        maxZoom={150}
       />
     </Canvas>
   );
