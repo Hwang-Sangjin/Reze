@@ -9,36 +9,32 @@ import { FaFastForward } from "react-icons/fa";
 import { FaFastBackward } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({
+  playMusic,
+  play,
+  start,
+  stop,
+  rangeValue,
+  onChangeRange,
+  duration,
+  onClickNext,
+  onClickPrevious,
+  volume,
+  handleVolumeChange,
+}) => {
   const [isUp, setIsUp] = useState(false);
 
   const openDrawer = useCallback(() => setIsUp(true), []);
   const closeDrawer = useCallback(() => setIsUp(false), []);
+
   return (
     <>
       <div className="absolute bottom-56 right-5 ">
-        <button
-          onClick={() => setSection(0)}
-          className=" btn btn-light px-4 py-2"
-        >
-          <BiHome color="white" size={40} />
-        </button>
-        <button
-          onClick={() => setSection(1)}
-          className=" btn btn-light px-4 py-2"
-        >
-          <BiCar color="white" size={40} />
-        </button>
-        <button
-          onClick={() => setSection(2)}
-          className=" btn btn-light px-4 py-2"
-        >
-          <BiCameraMovie color="white" size={40} />
-        </button>
         <button onClick={openDrawer} className=" btn btn-light px-4 py-2">
-          <BiSolidMusic color="white" size={40} />
+          <BiSolidMusic color="white" size={20} />
         </button>
       </div>
+
       <Drawer
         className="drawer"
         duration={250}
