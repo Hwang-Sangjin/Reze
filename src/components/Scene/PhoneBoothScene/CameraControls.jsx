@@ -18,7 +18,7 @@ const CameraControls = () => {
       ref={cameraRef}
       makeDefault
       position={[7, 7, 10]}
-      zoom={100}
+      zoom={50}
     />
   );
 };
