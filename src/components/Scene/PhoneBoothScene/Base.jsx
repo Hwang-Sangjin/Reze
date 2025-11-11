@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import BaseTexture from "&/Booth/Base1.jpg";
+import BaseTexture from "&/Booth/Base.jpg";
 import * as THREE from "three";
 
 export function Base(props) {
-  const { nodes, materials } = useGLTF("/Base1.glb");
+  const { nodes, materials } = useGLTF("/Base.glb");
 
   const bakedTexture = useTexture(BaseTexture);
 
@@ -49,4 +49,4 @@ export function Base(props) {
   );
 }
 
-useGLTF.preload("/Base1.glb");
+useGLTF.preload("/Base.glb");

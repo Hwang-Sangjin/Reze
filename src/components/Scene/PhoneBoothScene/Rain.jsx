@@ -8,7 +8,7 @@ import { useFrame } from "@react-three/fiber";
 
 export const Rain = () => {
   const [SnowGeometry, setSnowGeometry] = useState(new THREE.BufferGeometry());
-  const particle_cnt = 2000; //0~5000
+  const particle_cnt = 1500; //0~5000
 
   const PerlinTexture = new THREE.TextureLoader().load(Perlin);
   PerlinTexture.wrapS = THREE.RepeatWrapping;

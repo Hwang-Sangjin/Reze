@@ -20,8 +20,8 @@ export default function FiberContainer() {
         minAzimuthAngle={0} // 왼쪽 45도
         maxAzimuthAngle={Math.PI / 4} // 오른쪽 45도
         // 📌 줌 제한 (orthographic 전용)
-        minZoom={90}
-        maxZoom={150}
+        minZoom={40}
+        maxZoom={60}
       />
     </Canvas>
   );
