@@ -12,9 +12,4 @@ export default defineConfig({
       "&": "/static",
     },
   },
-  // css: {
-  //   postcss: {
-  //     plugins: [tailwindcss()],
-  //   },
-  // },
 });

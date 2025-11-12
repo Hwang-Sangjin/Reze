@@ -3,8 +3,35 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: #132135;
+
+  /* gradient 설정 */
+  background: linear-gradient(90deg, #f0dfca, #231f1c);
+  background-size: 200% 200%;
+
+  /* animation 추가 */
+  animation: gradientMove 8s ease infinite;
 }
+
+/* 스크롤바 숨김 */
 body {
   -ms-overflow-style: none;
+}
+
+/* gradient 움직임 정의 */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.protest-guerrilla-regular {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

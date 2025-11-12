@@ -27,13 +27,13 @@ function Loader() {
   return (
     <>
       {start ? (
-        <div className="absolute text-center w-full h-full bg-[#132135] z-50">
+        <div className="absolute text-center w-full h-full  z-50">
           <button
             onClick={() => {
               setPlay(true);
               setStart(false);
             }}
-            className="z-100 relative top-1/3 m-auto pointer jersey-10-regular text-6xl text-white"
+            className="z-100 relative top-1/3 m-auto pointer protest-guerrilla-regular text-6xl text-white"
             disabled={progress < 100}
           >
             Enter Jin's Room
